@@ -20,8 +20,12 @@ public class ReadWriteDirectoryAndFiles {
     }
 
     public static void printFileContents(List<String> contents){
-        for (String line : contents){
-            System.out.println(line);
+        System.out.println("\n   Name   |   Number  " +
+                "\n---------------------");
+        for (int i = 0; i < contents.size(); i += 2){
+            String result = String.join(" | ", contents.get(i), contents.get(i + 1));
+            System.out.println(result);
         }
+        System.out.println("\n");
     }
 }
