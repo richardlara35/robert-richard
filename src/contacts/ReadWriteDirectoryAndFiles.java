@@ -8,6 +8,7 @@ import java.util.List;
 public class ReadWriteDirectoryAndFiles {
 
     public static List<String> readFromFile(Path path) throws IOException {
+//        System.out.println(Files.readAllLines(path));
         return Files.readAllLines(path);
     }
 
@@ -19,9 +20,12 @@ public class ReadWriteDirectoryAndFiles {
         }
     }
 
-    public static void printFileContents(List<String> contents){
-        for (String line : contents){
-            System.out.println(line);
+    public static void printFileContents(List<String> contents) {
+        System.out.println("\n Name | Phone Number \n -------------------------");
+        for (int i = 0; i < contents.size(); i+=2) {
+            System.out.println(contents.get(i) + " | " + contents.get(i + 1));
         }
+        System.out.println("\n");
     }
 }
+
