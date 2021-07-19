@@ -16,12 +16,14 @@ public class UserInput {
         String userChoice = scanner.next();
         ArrayList<String> newArray = null;
         if (userChoice.equalsIgnoreCase("y")){
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Please enter the new contact's number: ");
-            String newNumber = sc.nextLine();
             Scanner scanner1 = new Scanner(System.in);
             System.out.println("Please enter the new contact's name: ");
             String newName = scanner1.nextLine();
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Please enter the new contact's number: ");
+            String newNumber = sc.nextLine();
+//            String str = String.join(" | ", newName, newNumber);
+//            System.out.println(str);
             newArray = new ArrayList<>();
             newArray.add(newName);
             newArray.add(newNumber);
@@ -53,7 +55,11 @@ public class UserInput {
             searchResult = (ArrayList<String>) ReadWriteDirectoryAndFiles.readFromFile(path);
 //            System.out.println(Collections.sort(searchResult));
            if( searchResult.contains(userSearch)){
-               System.out.println(searchResult.get(searchResult.indexOf(userSearch)));
+               String index1 = searchResult.get(searchResult.indexOf(userSearch));
+               String index2 = searchResult.get(searchResult.indexOf(userSearch) + 1);
+               String result = String.join(" | ", index1, index2);
+               System.out.println(result);
+               System.out.println("\n");
            }
         } catch (IOException e) {
             System.out.println("Unable to read contents of the file at: " + path.toAbsolutePath());

@@ -24,6 +24,7 @@ public class ReadWriteDirectoryAndFiles {
         System.out.println("\n  Name | Phone Number \n -------------------------");
         for (int i = 0; i < contents.size(); i+=2) {
             System.out.println(contents.get(i) + " | " + contents.get(i + 1));
+
         }
         System.out.println("\n");
     }
