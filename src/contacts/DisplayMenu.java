@@ -28,7 +28,6 @@ public class DisplayMenu {
         switch (userChoice) {
             case 0:
                 ReadWriteDirectoryAndFiles.tryPrintContents(path);
-                showOptions();
                 break;
             case 1:
                 UserInput.UserAdd();
