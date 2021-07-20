@@ -36,12 +36,9 @@ public class deleteContacts {
             System.out.println("Which contact would you like to delete?");
             String contactToDelete = chooseContact.nextLine();
             List<String> file = readFile();
-            System.out.println(file);
             file.remove(file.indexOf(contactToDelete) +1);
             file.remove(contactToDelete);
-            System.out.println(file);
             tryWriteToFile(file, path);
-            System.out.println(file);
 
 
         }else {
